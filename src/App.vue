@@ -1,47 +1,50 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <h2>1</h2>
+    <p>{{ reactMsg }}</p>
+    <button v-on:click="reactMsgAdd">눌러</button>
+    <h2>2</h2>
+    <p>{{ normalMsg }}</p>
+    <button v-on:click="normalMsgAdd">눌러</button>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import { isRef, onBeforeMount, onMounted, ref } from 'vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default {
+  setup () {
+    console.log('1');
+    const reactMsg = ref('Hello R');
+    const reactMsgAdd = () => {
+      reactMsg.value = reactMsg.value + '!';
+    };
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    //console.log('isRef(reactMsg) : ', isRef(reactMsg));
+
+    let normalMsg = 'Hello N';
+    const normalMsgAdd = () => {
+      normalMsg = normalMsg + '!';
+    };
+
+    onMounted(() => {
+      console.log('2');
+    })
+    onBeforeMount(() => {
+      console.log('3');
+    })
+
+
+    return {
+      reactMsg,
+      reactMsgAdd,
+      normalMsg,
+      normalMsgAdd
+    };
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
 }
+</script>
+
+<style lang="scss" scoped>
+
 </style>
