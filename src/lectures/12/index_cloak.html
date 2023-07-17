@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-cloak</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        v-cloak은 컴포넌트 준비되면 v-cloak이 사라짐<br />로딩바 이용에 좋을지도
+      </p>
+      <p v-cloak>{{message}}</p>
+    </div>
+    <script>
+      const { createApp } = Vue
+      setTimeout(() => {
+        createApp({
+          data() {
+            return {
+              message: '안녕하세요오'
+            }
+          }
+        }).mount('#app');
+      }, 3000)
+    </script>
+
+  </body>
+</html>
