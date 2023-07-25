@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "제목1",
+      "content": "내용1",
+      "createdAt": "2023.07.20"
+    },
+    {
+      "title": "제목2###",
+      "content": "내용2ddd",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "제목3",
+      "content": "내용3",
+      "createdAt": "2023.07.22"
+    },
+    {
+      "id": 4,
+      "title": "제목4",
+      "content": "내용4",
+      "createdAt": "2023.07.23"
+    },
+    {
+      "id": 5,
+      "title": "제목5",
+      "content": "내용5",
+      "createdAt": "2023.07.24"
+    },
+    {
+      "id": 6,
+      "title": "제목6",
+      "content": "내용6",
+      "createdAt": "2023.07.25"
+    },
+    {
+      "title": "추가등록",
+      "content": "추가등록입니다.",
+      "createAt": 1690283548952,
+      "id": 7
+    },
+    {
+      "title": "숙주나물",
+      "content": "숙주덮밥",
+      "createdAt": 1690283775406,
+      "id": 8
+    }
+  ]
+}
