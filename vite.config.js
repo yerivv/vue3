@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue';
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [vue()],
+	mode: '', //기본은 dev
 	resolve: {
 		alias: {
 			//별칭을 만들 때 사용
@@ -21,11 +22,11 @@ export default defineConfig({
 	},
 	server: {
 		port: 3030, //기본 3000에서 기본은 5173으로 변경됨
-		open: true, //실행할때 오픈할고냐 말고냐 , 경로를 넣어도 됨. ex open: '/docs/index.html',
+		open: false, //실행할때 오픈할고냐 말고냐 , 경로를 넣어도 됨. ex open: '/docs/index.html',
 	},
 	preview: {
 		port: 8080,
-		open: true,
+		open: false,
 	},
 	build: {
 		outDir: './dist',
