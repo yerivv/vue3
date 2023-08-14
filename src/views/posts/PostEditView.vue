@@ -18,7 +18,8 @@
 				<button class="btn btn-primary">수정</button>
 			</template>
 		</PostForm>
-		<AppAlert :show="showAlert" :message="alertMessage" :type="alertType" />
+		<!-- <AppAlert :show="showAlert" :message="alertMessage" :type="alertType" /> -->
+		<AppAlert :items="alerts" />
 	</div>
 </template>
 
@@ -27,7 +28,6 @@ import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { getPostById, updatePost } from '@/api/posts';
 import PostForm from '@/components/posts/PostForm.vue';
-import AppAlert from '@/components/AppAlert.vue';
 const route = useRoute();
 const router = useRouter();
 const id = route.params.id;
@@ -59,6 +59,7 @@ const edit = async () => {
 		vAlert('수정이 완료되었습니다.', 'success');
 	} catch (error) {
 		console.error(error);
+		vAlert(error.message);
 	}
 };
 
@@ -67,15 +68,11 @@ const goDetailPage = () => {
 };
 
 //alert
-const showAlert = ref(false);
-const alertMessage = ref('');
-const alertType = ref('');
+const alerts = ref([]);
 const vAlert = (message, type = 'error') => {
-	showAlert.value = true;
-	alertMessage.value = message;
-	alertType.value = type;
+	alerts.value.push({ message, type });
 	setTimeout(() => {
-		showAlert.value = false;
+		alerts.value.shift();
 	}, 2000);
 };
 </script>

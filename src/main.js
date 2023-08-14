@@ -3,8 +3,18 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from '@/router';
+//import GlobalComponents from '@/plugins/global-components';
+//import focus from '@/directives/focus';
+import GlobalDirectives from '@/plugins/global-directives';
+import dayjs from '@/plugins/dayjs';
 
-createApp(App).use(router).mount('#app');
+const app = createApp(App);
+//app.use(GlobalComponents);
+//app.directive('focus', focus);
+app.use(router);
+app.use(GlobalDirectives);
+app.use(dayjs);
+app.mount('#app');
 import 'bootstrap/dist/js/bootstrap.js';
 
 // console.log('MODE', import.meta.env.MODE); //현재 구동되는 모드 (환경변수)

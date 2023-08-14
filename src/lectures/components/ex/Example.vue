@@ -48,7 +48,6 @@
 import { ref } from 'vue';
 import MyButton from './MyButton.vue';
 import FancyButton from './FancyButton.vue';
-import AppCard from '@/components/AppCard.vue';
 export default {
 	components: {
 		MyButton,
