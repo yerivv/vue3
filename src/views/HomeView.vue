@@ -8,8 +8,8 @@
 			<AppCard>{{ item }}</AppCard>
 		</AppGrid>
 		<hr />
-		<h2>{{ $person.name }}</h2>
-		<button class="btn btn-primary" @click="person.say()">click person</button>
+		<!-- <h2>{{ $person.name }}</h2>
+		<button class="btn btn-primary" @click="person.say()">click person</button> -->
 	</div>
 </template>
 
@@ -33,8 +33,8 @@ const goAboutPage = () => {
 
 const items = ref(['사과', '배', '포도', '바나나']);
 
-const person = inject('person');
-console.log('person.name : ', person.name);
+//const person = inject('person');
+//console.log('person.name : ', person.name);
 </script>
 
 <style lang="scss" scoped></style>
