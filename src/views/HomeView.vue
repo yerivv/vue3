@@ -10,6 +10,9 @@
 		<hr />
 		<!-- <h2>{{ $person.name }}</h2>
 		<button class="btn btn-primary" @click="person.say()">click person</button> -->
+		<h2>{{ position }}</h2>
+
+		<h2>{{ x }}, {{ y }}</h2>
 	</div>
 </template>
 
@@ -23,7 +26,7 @@ export default {
 </script>
 
 <script setup>
-import { inject, ref } from 'vue';
+import { inject, reactive, ref, toRef, toRefs } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -35,6 +38,20 @@ const items = ref(['사과', '배', '포도', '바나나']);
 
 //const person = inject('person');
 //console.log('person.name : ', person.name);
+
+const position = reactive({
+	x: 100,
+	y: 1000,
+});
+
+//const x = toRef(position, 'x'); //동기화
+//const y = toRef(position, 'y');
+
+const { x, y } = toRefs(position);
+
+//const { x, y } = position;
+//const x = ref(position.x);
+//const y = ref(position.y);
 </script>
 
 <style lang="scss" scoped></style>

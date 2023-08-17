@@ -14,6 +14,7 @@ import NestedView from '@/views/nested/NestedView.vue';
 import NestedOneView from '@/views/nested/NestedOneView.vue';
 import NestedTwoView from '@/views/nested/NestedTwoView.vue';
 import NestedHomeView from '@/views/nested/NestedHomeView.vue';
+import SwiperIndex from '@/views/swiper/SwiperIndex.vue';
 
 const routes = [
 	{
@@ -73,6 +74,11 @@ const routes = [
 				component: NestedTwoView,
 			},
 		],
+	},
+	{
+		path: '/swiper',
+		name: 'SwiperIndex',
+		component: SwiperIndex,
 	},
 ];
 
