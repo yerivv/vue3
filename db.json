@@ -60,5 +60,22 @@
       "createdAt": 1692178115296,
       "id": 20
     }
+  ],
+  "slide": [
+    {
+      "title": "알뜰하고 빠른 반려용품 쇼핑",
+      "content": "20% 선착순 쿠폰",
+      "image": "https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202308/2023081110145121760245860124_469.jpg&w=420&h=500&edit=c&t=0f180ce4e0c546e8cd4020e41d3afb737f876421",
+      "link": "",
+      "target" : "",
+      "id": 1
+    },{
+      "title": "23 F/W 얼리버드오픈",
+      "content": "미리 만나는 명품 신상 특가 프라다/톰브라운外",
+      "image": "https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202308/2023081110065723788568063956_972.jpg&w=420&h=500&edit=c&t=5ac599a0b373ec182d52699cf295b548d807f628",
+      "link": "https://www.naver.com",
+      "target" : "_blank",
+      "id": 2
+    }
   ]
 }
