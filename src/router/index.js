@@ -15,6 +15,7 @@ import NestedOneView from '@/views/nested/NestedOneView.vue';
 import NestedTwoView from '@/views/nested/NestedTwoView.vue';
 import NestedHomeView from '@/views/nested/NestedHomeView.vue';
 import SwiperIndex from '@/views/swiper/SwiperIndex.vue';
+import MyPageView from '@/views/MypageView.vue';
 
 const routes = [
 	{
@@ -79,13 +80,44 @@ const routes = [
 		path: '/swiper',
 		name: 'SwiperIndex',
 		component: SwiperIndex,
+		beforeEnter: [removeQueryParams, removeHash]
+	},
+	{
+		path: '/my',
+		name: 'MyPageView',
+		component: MyPageView,
+		//라우트 가드 (beforeEnter)
+		// beforeEnter: (to, from) => {
+		// 	console.log('to', to);
+		// 	console.log('from', from);
+		// 	//return false; //라우팅 취소
+		// }
 	},
 ];
+
+function removeQueryParams(to) {
+  if (Object.keys(to.query).length)
+    return { path: to.path, query: {}, hash: to.hash }
+}
+
+function removeHash(to) {
+  if (to.hash) return { path: to.path, query: to.query, hash: '' }
+}
 
 const router = createRouter({
 	history: createWebHistory(),
 	//history: createWebHashHistory(),
 	routes,
 });
+
+//전역가드 (Global Before Guards)
+// router.beforeEach((to, from) => {
+// 	console.log('to', to);
+// 	console.log('from', from);
+// 	if (to.name == 'MyPageView'){
+// 		router.push({name:'Home'})
+// 	}
+// 	return false; //라우팅 취소
+// })
 
 export default router;
