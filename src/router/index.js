@@ -15,6 +15,7 @@ import NestedOneView from '@/views/nested/NestedOneView.vue';
 import NestedTwoView from '@/views/nested/NestedTwoView.vue';
 import NestedHomeView from '@/views/nested/NestedHomeView.vue';
 import SwiperIndex from '@/views/swiper/SwiperIndex.vue';
+import ChartIndex from '@/views/chart/ChartIndex.vue';
 import MyPageView from '@/views/MypageView.vue';
 
 const routes = [
@@ -80,7 +81,7 @@ const routes = [
 		path: '/swiper',
 		name: 'SwiperIndex',
 		component: SwiperIndex,
-		beforeEnter: [removeQueryParams, removeHash]
+		beforeEnter: [removeQueryParams, removeHash],
 	},
 	{
 		path: '/my',
@@ -93,15 +94,20 @@ const routes = [
 		// 	//return false; //라우팅 취소
 		// }
 	},
+	{
+		path: '/chart',
+		name: 'ChartIndex',
+		component: ChartIndex,
+	},
 ];
 
 function removeQueryParams(to) {
-  if (Object.keys(to.query).length)
-    return { path: to.path, query: {}, hash: to.hash }
+	if (Object.keys(to.query).length)
+		return { path: to.path, query: {}, hash: to.hash };
 }
 
 function removeHash(to) {
-  if (to.hash) return { path: to.path, query: to.query, hash: '' }
+	if (to.hash) return { path: to.path, query: to.query, hash: '' };
 }
 
 const router = createRouter({

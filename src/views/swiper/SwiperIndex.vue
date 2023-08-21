@@ -1,6 +1,7 @@
 <template>
+	<h2>swiper-vue</h2>
 	<div class="group">
-		<h2>ex 01.</h2>
+		<h3>ex 01.</h3>
 		<AppSwiper
 			:slidesPerView="2"
 			:spaceBetween="30"
@@ -17,7 +18,7 @@
 		</AppSwiper>
 	</div>
 	<div class="group">
-		<h2>ex 02.</h2>
+		<h3>ex 02.</h3>
 		<AppSwiper
 			:slidesPerView="'auto'"
 			:pagination="pagination"
@@ -42,7 +43,7 @@
 		</AppSwiper>
 	</div>
 	<div class="group">
-		<h2>ex 03.</h2>
+		<h3>ex 03.</h3>
 		<AppSwiper
 			:pagination="{
 				type: 'progressbar',
@@ -51,7 +52,7 @@
 		></AppSwiper>
 	</div>
 	<div class="group">
-		<h2>ex 04.</h2>
+		<h3>ex 04.</h3>
 		<AppSwiper
 			:pagination="{
 				type: 'fraction',
